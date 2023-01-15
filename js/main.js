@@ -1,7 +1,7 @@
 let btn = document.querySelector('#burger');
 let link = document.querySelectorAll('#link');
 let links = document.querySelector('#header__navbar')
-console.log(link)
+
 btn.addEventListener('click', function() {
     document.querySelector('header').classList.toggle('open')
 });

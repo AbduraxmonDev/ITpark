@@ -1,0 +1,123 @@
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    &__container {
+        @include flex();
+    }
+    &__navbar {
+        @include flex();
+    }
+    &__lessons{
+        @include flex();
+        flex-wrap: wrap;
+        display: none;
+    }
+    .lessons{
+        padding: 16px 32px;
+        background-color: $whiteBg;
+        border-radius: 100px;
+        margin: 5px;
+    }
+    &__link{
+        color: $blackColor;
+    }
+    &__link:not(:last-child) {
+        padding: 15px 20px;
+        margin-right: calc(10px + 30 * (100vw / 1260));
+        transition: 0.4s;
+        &:hover{
+            color: $whiteColor;
+            background-color: $greenBg;
+            border-radius: 100px;
+        }
+        &:focus{
+            color: $whiteColor;
+            background-color: $greenBg;
+            border-radius: 100px;
+        }
+    }
+    &__link:last-child{
+        @include flex();
+    }
+    &__phone{
+        margin-right: 8px;
+        margin-bottom: -3px;
+        rotate: 8deg;
+    }
+    &__btn{
+        display: none;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        position: relative;
+        z-index: 2;
+        .btn{
+            position: absolute;
+            border-radius: 10px;
+            width: 30px;
+            height: 3px;
+            left: 5px;
+            background-color: $greenBg;
+            transition: transform .5s, opacity .5s, background-color .5s;
+            &:nth-child(1) {
+                transform: translateY(-8px);
+            }
+            &:nth-child(3) {
+                transform: translateY(8px);
+            }
+        }
+    }
+    &.open{
+        .header__btn{
+            .btn:nth-child(1) {
+                transform: translateY(0) rotate(45deg);
+                background-color: $blackBg;
+                width: 26px;
+            }
+            .btn:nth-child(2) {
+                opacity: 0;
+            }
+            .btn:nth-child(3) {
+                transform: translateY(0) rotate(-45deg);
+                background-color: $blackBg;
+                width: 26px;
+            }
+        }
+        .header__right{
+            transform: translateX(-100%);
+        }
+    }
+    @media screen and(max-width: 985px) {
+        &__btn{
+            display: block;
+        }
+        &__right{
+            display: block;
+            position: fixed;
+            width: 100%;
+            right: -100%;
+            top: -50px;
+            background-color: $whiteColor;
+            padding: 120px 20px 20px 20px;
+            transition: transform .5s;
+            overflow: hidden;    
+        }
+        &__navbar{
+            @include flex(flex-start);
+            flex-direction: column;
+        }
+        &__lessons{
+            display: flex; 
+            margin-left: -10px;
+        }
+        &__link{
+            margin-bottom: 20px;
+        }
+        &__link:last-child{
+            padding: 20px;
+            margin-top: 20px;
+        }
+    }
+}

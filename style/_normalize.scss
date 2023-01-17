@@ -22,9 +22,10 @@ a {
 button {
     cursor: pointer;
 }
-// .wrapper{
-//     // overflow: hidden;
-// }
+
+.wrapper{
+    overflow: hidden !important;
+}
 
 .container{
     max-width: 1260px;

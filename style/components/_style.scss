@@ -1,123 +1,293 @@
 .header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    &__container {
-        @include flex();
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  background-color: $whiteColor;
+  &__container {
+    @include flex();
+  }
+  &__logo {
+    width: calc(110px + 70 * (100vw / 1260));
+  }
+  &__navbar {
+    @include flex();
+  }
+  &__lessons {
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    display: none;
+  }
+  .lessons {
+    padding: 16px 32px;
+    color: $blackColor;
+    background-color: $whiteBg;
+    border-radius: $borderRadius;
+    margin: 5px;
+    font-size: 14px;
+    transition: $transition;
+    &:hover {
+      color: $whiteColor;
+      background-color: $greenBg;
+      border-radius: $borderRadius;
+    }
+    &:focus {
+      color: $whiteColor;
+      background-color: $greenBg;
+      border-radius: $borderRadius;
+    }
+  }
+  &__link {
+    color: $blackColor;
+  }
+  &__link:not(:last-child) {
+    padding: 15px 20px;
+    margin-right: calc(10px + 30 * (100vw / 1260));
+    transition: $transition;
+    &:hover {
+      color: $whiteColor;
+      background-color: $greenBg;
+      border-radius: $borderRadius;
+    }
+    &:focus {
+      color: $whiteColor;
+      background-color: $greenBg;
+      border-radius: $borderRadius;
+    }
+  }
+  &__link:last-child {
+    @include flex();
+  }
+  &__phone {
+    margin-right: 8px;
+    margin-bottom: -3px;
+    rotate: 8deg;
+  }
+  &__btn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    position: relative;
+    z-index: 10000000;
+    .btn {
+      position: absolute;
+      border-radius: 10px;
+      width: 30px;
+      height: 3px;
+      left: 5px;
+      background-color: $greenBg;
+      transition: transform $transition, opacity 0.5s, background-color 0.5s;
+      &:nth-child(1) {
+        transform: translateY(-8px);
+      }
+      &:nth-child(3) {
+        transform: translateY(8px);
+      }
+    }
+  }
+  &.open {
+    .header__btn {
+      .btn:nth-child(1) {
+        transform: translateY(0) rotate(45deg);
+        background-color: $blackBg;
+        width: 25px;
+      }
+      .btn:nth-child(2) {
+        opacity: 0;
+      }
+      .btn:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+        background-color: $blackBg;
+        width: 25px;
+      }
+    }
+    .header__right {
+      transform: translateX(-100%);
+    }
+  }
+  @media screen and(max-width: 985px) {
+    &__btn {
+      display: block;
+    }
+    &__right {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 200vh;
+      right: -100%;
+      top: -50px;
+      z-index: 100000;
+      background-color: $whiteColor;
+      padding: 120px 20px 20px 20px;
+      transition: transform $transition;
     }
     &__navbar {
-        @include flex();
+      @include flex(flex-start);
+      flex-direction: column;
     }
-    &__lessons{
-        @include flex();
-        flex-wrap: wrap;
-        display: none;
+    &__lessons {
+      display: flex;
+      margin-left: -10px;
     }
-    .lessons{
-        padding: 16px 32px;
-        background-color: $whiteBg;
-        border-radius: 100px;
-        margin: 5px;
+    &__link {
+      margin-bottom: 20px;
     }
-    &__link{
+    &__link:last-child {
+      padding: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+.home {
+  padding-top: 164px;
+  &__container {
+    @include flex();
+    flex-direction: column;
+    height: 100%;
+  }
+  &__top {
+    @include flex();
+    width: 100%;
+    gap: 50px;
+  }
+  &__title {
+    .title__name {
+        font-size: calc(25px + 35 * (100vw / 1260));
+      }
+    .title__subtitle{
+        margin-top: 20px;
+        font-size: calc(16px + 9 * (100vw / 1260));
+        color: $grayColor;
+    }
+  }
+  &__swiper {
+    position: relative;
+  }
+  .swiper-wrapper{
+    transition-duration: 1000ms !important;
+  }
+  &__logo {
+    position: absolute;
+    right: -90px;
+    bottom: 0;
+    z-index: 2;
+    width: calc(90px + 150 * (100vw / 1260)) !important;
+  }
+  &__greenlogo {
+    position: absolute;
+    left: -10px;
+    z-index: 2;
+    width: calc(50px + 70 * (100vw / 1260));
+  }
+  &__down {
+    margin-top: 40px;
+    @include flex();
+    width: 100%;
+    gap: 50px;
+  }
+  &__application {
+    background-color: $blackBg;
+    border-radius: $borderRadius;
+    transition: $transition;
+    .application__link {
+      @include flex();
+      padding-block: calc(14px + 10 * (100vw / 1260));
+      padding-inline: calc(20px + 12 * (100vw / 1260));
+      font-size: calc(12px + 5 * (100vw / 1260));
+      color: $whiteColor;
+      gap: 10px;
+    }
+    .application__icon{
+      width: calc(15px + 25  * (100vw / 1260)) !important;
+    }
+    &:hover {
+      background-color: $whiteBg;
+      border: 2px solid $blackBg;
+      .application__link {
         color: $blackColor;
+      }
+      .application__icon {
+        path{
+            fill: $blackBg;
+        }
+      }
     }
-    &__link:not(:last-child) {
-        padding: 15px 20px;
-        margin-right: calc(10px + 30 * (100vw / 1260));
-        transition: 0.4s;
-        &:hover{
-            color: $whiteColor;
-            background-color: $greenBg;
-            border-radius: 100px;
-        }
-        &:focus{
-            color: $whiteColor;
-            background-color: $greenBg;
-            border-radius: 100px;
-        }
+  }
+  &__hashtags {
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    max-width: 600px;
+    width: 100%;
+    .hashtag__item {
+        color: $blackColor;
+        margin: 5px;
+        padding-block: calc(8px + 8 * (100vw / 1260));
+        padding-inline: calc(15px + 15 * (100vw / 1260));
+        font-size: calc(10px + 5 * (100vw / 1260));
+        background-color: $whiteBg;
+        border-radius: $borderRadius;
     }
-    &__link:last-child{
-        @include flex();
+  }
+  @media screen and (max-width: 930px) {
+    &__top {
+        flex-direction: column;
     }
-    &__phone{
-        margin-right: 8px;
-        margin-bottom: -3px;
-        rotate: 8deg;
+    &__logo{
+      right: -60px;
     }
-    &__btn{
-        display: none;
-        width: 40px;
-        height: 40px;
-        background: none;
-        border: none;
-        position: relative;
-        z-index: 2;
-        .btn{
-            position: absolute;
-            border-radius: 10px;
-            width: 30px;
-            height: 3px;
-            left: 5px;
-            background-color: $greenBg;
-            transition: transform .5s, opacity .5s, background-color .5s;
-            &:nth-child(1) {
-                transform: translateY(-8px);
-            }
-            &:nth-child(3) {
-                transform: translateY(8px);
-            }
-        }
+    &__down{
+        flex-direction: column;
+        align-items: flex-start;
     }
-    &.open{
-        .header__btn{
-            .btn:nth-child(1) {
-                transform: translateY(0) rotate(45deg);
-                background-color: $blackBg;
-                width: 26px;
-            }
-            .btn:nth-child(2) {
-                opacity: 0;
-            }
-            .btn:nth-child(3) {
-                transform: translateY(0) rotate(-45deg);
-                background-color: $blackBg;
-                width: 26px;
-            }
-        }
-        .header__right{
-            transform: translateX(-100%);
-        }
+    .swiper-img {
+        border-radius: calc(35px + 25 * (100vw / 1260));
     }
-    @media screen and(max-width: 985px) {
-        &__btn{
-            display: block;
-        }
-        &__right{
-            display: block;
-            position: fixed;
-            width: 100%;
-            right: -100%;
-            top: -50px;
-            background-color: $whiteColor;
-            padding: 120px 20px 20px 20px;
-            transition: transform .5s;
-            overflow: hidden;    
-        }
-        &__navbar{
-            @include flex(flex-start);
-            flex-direction: column;
-        }
-        &__lessons{
-            display: flex; 
-            margin-left: -10px;
-        }
-        &__link{
-            margin-bottom: 20px;
-        }
-        &__link:last-child{
-            padding: 20px;
-            margin-top: 20px;
-        }
+  }
+  @media screen and (max-width: 640px) {
+    padding-top: 80px;
+    &__logo{
+      right: 10px;
+      bottom: -5px;
     }
+    &__greenlogo{
+      left: 40px;
+      top: 0;
+    }
+    &__swiper{
+      width: calc(270px + 330 * (100vw / 1260));
+    }
+    .swiper-img{
+      width: calc(180px + 220 * (100vw / 1260));
+      height: 220px;
+    }
+    .mySwiper{
+      width: calc(190px + 230 * (100vw / 1260));
+    }
+  }
+}
+.mySwiper {
+  width: 600px;
+  margin: 0 auto;  
+}
+.swiper-slide{
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+.swiper-img {
+    max-width: 600px;
+  width: 100%;
+  height: 350px;
+  border-radius: $borderRadius;
+  margin: 0 auto;
+}
+.swiper-pagination {
+  &-clickable &-bullet {
+    width: calc(15px + 25 * (100vw / 1260));
+    height: 2.5px;
+    background-color: $whiteBg;
+    border-radius: 10px;
+  }
 }

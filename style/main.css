@@ -619,7 +619,7 @@ button {
   right: -30px;
   bottom: -30px;
   border-radius: 100px;
-  width: calc(200px + 11.9047619048vw);
+  width: calc(190px + 12.6984126984vw);
 }
 @media screen and (max-width: 825px) {
   .courses__container {
@@ -683,5 +683,6 @@ button {
     position: absolute;
     bottom: 36%;
     left: 40px;
+    right: 40px;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -545,7 +545,7 @@
   right: -30px;
   bottom: -30px;
   border-radius: $borderRadius;
-  width: calc(200px + 150 * (100vw / 1260));
+  width: calc(190px + 160 * (100vw / 1260));
  }
  @media screen and (max-width: 825px) {
   &__container{
@@ -601,6 +601,7 @@
     position: absolute;
     bottom:36%;
     left: 40px;
+    right: 40px;
     // right: 40px;
   }
 }

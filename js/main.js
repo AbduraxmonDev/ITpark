@@ -29,5 +29,5 @@ var swiper = new Swiper(".mySwiper", {
 
 let moreBtn = document.querySelector('#moreBtn');
 moreBtn.addEventListener('click', function(e) {
-  document.querySelector(".courses__types").classList.toggle  ("more");
+  document.querySelector(".courses__types").classList.toggle("more");
 })

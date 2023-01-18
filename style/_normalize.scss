@@ -9,6 +9,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #FFFFFF;
+    overflow-x: hidden;
 }
 
 ul , ol {
@@ -21,10 +22,6 @@ a {
 
 button {
     cursor: pointer;
-}
-
-.wrapper{
-    contain: paint;
 }
 
 .container{

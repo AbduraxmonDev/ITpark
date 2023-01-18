@@ -26,3 +26,8 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   }
 });
+
+let moreBtn = document.querySelector('#moreBtn');
+moreBtn.addEventListener('click', function(e) {
+  document.querySelector(".courses__types").classList.toggle  ("more");
+})

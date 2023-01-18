@@ -24,7 +24,7 @@ button {
 }
 
 .wrapper{
-    overflow: hidden !important;
+    contain: paint;
 }
 
 .container{

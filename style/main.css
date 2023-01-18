@@ -25,7 +25,7 @@ button {
 }
 
 .wrapper {
-  overflow: hidden !important;
+  contain: paint;
 }
 
 .container {
@@ -36,7 +36,7 @@ button {
 }
 
 .header {
-  position: fixed;
+  position: fixed !important;
   z-index: 999;
   left: 0;
   right: 0;
@@ -65,7 +65,7 @@ button {
 .header .lessons {
   padding: 16px 32px;
   color: rgb(28, 25, 23);
-  background-color: rgb(249, 249, 251);
+  background-color: rgb(242, 243, 247);
   border-radius: 100px;
   margin: 5px;
   font-size: 14px;
@@ -256,7 +256,7 @@ button {
   width: calc(15px + 1.9841269841vw) !important;
 }
 .home__application:hover {
-  background-color: rgb(249, 249, 251);
+  background-color: rgb(242, 243, 247);
 }
 .home__application:hover .application__link {
   color: rgb(28, 25, 23);
@@ -278,7 +278,7 @@ button {
   padding-block: calc(8px + 0.6349206349vw);
   padding-inline: calc(15px + 1.1904761905vw);
   font-size: calc(10px + 0.3968253968vw);
-  background-color: rgb(249, 249, 251);
+  background-color: rgb(242, 243, 247);
   border-radius: 100px;
 }
 @media screen and (max-width: 930px) {
@@ -342,7 +342,7 @@ button {
 .swiper-pagination-clickable .swiper-pagination-bullet {
   width: calc(15px + 1.9841269841vw);
   height: 2.5px;
-  background-color: rgb(249, 249, 251);
+  background-color: rgb(242, 243, 247);
   border-radius: 10px;
 }
 
@@ -465,5 +465,223 @@ button {
   .card-3 {
     grid-column: 1/2;
     grid-row: 3/4;
+  }
+}
+.courses {
+  scroll-margin-top: 140px;
+  position: relative;
+}
+.courses__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.courses__sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  margin-right: 20px;
+}
+.courses__title {
+  margin-block: 48px;
+  font-size: calc(25px + 0.7936507937vw);
+}
+.courses__types {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 1000px;
+}
+.courses__name {
+  padding-block: calc(10px + 0.4761904762vw);
+  padding-inline: calc(20px + 0.9523809524vw);
+  margin: calc(5px + 0.3968253968vw);
+  font-size: calc(10px + 0.3968253968vw);
+  color: rgb(28, 25, 23);
+  background-color: rgb(242, 243, 247);
+  border-radius: 100px;
+  transition: all 0.5s;
+}
+.courses__name:hover {
+  background-color: rgb(28, 25, 23);
+  color: #FFFFFF;
+}
+.courses .other__courses {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+}
+.courses .see__more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: calc(10px + 0.4761904762vw);
+  padding-inline: calc(20px + 0.9523809524vw);
+  margin: calc(5px + 0.3968253968vw);
+  font-size: calc(10px + 0.3968253968vw);
+  color: rgb(141, 140, 139);
+  border: transparent;
+  background-color: rgb(242, 243, 247);
+  border-radius: 100px;
+  transition: all 0.5s;
+}
+.courses .see__more-btn .more__icon {
+  margin-left: 10px;
+  rotate: 90deg;
+  height: 12px;
+}
+.courses .see__more-btn .more__icon path {
+  transition: 0.5s;
+}
+.courses .see__more-btn:hover {
+  background-color: rgb(28, 25, 23);
+  color: #FFFFFF;
+}
+.courses .see__more-btn:hover .more__icon path {
+  fill: white;
+}
+.courses__types.more .other__courses {
+  max-height: 1000px;
+  height: 100%;
+}
+.courses__types.more .more__icon {
+  rotate: 270deg !important;
+}
+.courses__article .article__card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #C0E444;
+  border-radius: 100px;
+  padding: 40px;
+  max-width: 790px;
+  width: 100%;
+  min-height: 590px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.courses__article .article__card:not(:last-child) {
+  margin-bottom: 30px;
+}
+.courses__article .article__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 25px;
+}
+.courses__article .article__title {
+  font-size: calc(20px + 0.5555555556vw);
+  color: #FFFFFF;
+}
+.courses__article .article__text {
+  color: #FFFFFF;
+  max-width: 250px;
+}
+.courses__article .article__down {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.courses__article .article__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: calc(14px + 0.7936507937vw);
+  padding-inline: calc(20px + 0.9523809524vw);
+  font-size: calc(10px + 0.5555555556vw);
+  border: transparent;
+  border-radius: 100px;
+  background-color: rgb(242, 243, 247);
+  color: rgb(28, 25, 23);
+  gap: 10px;
+  transition: 0.5s;
+}
+.courses__article .article__btn:hover {
+  background-color: rgb(28, 25, 23);
+  color: #FFFFFF;
+}
+.courses__article .article__btn:hover path {
+  fill: rgb(242, 243, 247);
+}
+.courses__article .article__icon path {
+  fill: rgb(28, 25, 23);
+  transition: 0.5s;
+}
+.courses .article__img {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  border-radius: 100px;
+  width: calc(200px + 11.9047619048vw);
+}
+@media screen and (max-width: 825px) {
+  .courses__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .courses .article__card {
+    border-radius: 70px;
+  }
+  .courses__sidebar {
+    position: static;
+    margin-bottom: 40px;
+  }
+  .courses__types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+  }
+  .courses .other__courses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .courses .see__more-btn {
+    display: none;
+  }
+}
+
+.article-2 {
+  background-color: #2DCACC !important;
+}
+.article-2 .article__top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.article-2 .article__down {
+  flex-direction: row-reverse;
+}
+.article-2 .article__img {
+  position: absolute;
+  left: -30px !important;
+}
+
+.article-3 {
+  background-color: #7F71B1 !important;
+}
+
+@media screen and (max-width: 550px) {
+  .article__card {
+    position: relative;
+  }
+  .article__btn {
+    position: absolute;
+    bottom: 36%;
+    left: 40px;
   }
 }/*# sourceMappingURL=main.css.map */

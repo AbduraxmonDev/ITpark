@@ -913,9 +913,64 @@ button {
   fill: rgb(242, 243, 247);
 }
 
+.location {
+  margin-block: 50px;
+}
 .location__map {
   max-width: 1220px;
   width: 100%;
   border: transparent;
+  border-radius: 70px;
+}
+
+.footer {
+  background-color: indigo;
+}
+.footer .top__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 500px;
+  padding: 40px;
+  background-color: rgb(39, 0, 145);
   border-radius: 100px;
+  overflow: hidden;
+}
+.footer__images {
+  position: relative;
+}
+.footer__gren-logo {
+  position: absolute;
+  width: 370px;
+  bottom: -110px;
+  left: -40px;
+  z-index: 1;
+}
+.footer__image {
+  position: absolute;
+  rotate: -30deg;
+  left: 60px;
+  bottom: -385px;
+  z-index: 2;
+  border-radius: 100px;
+}
+.footer__white-logo {
+  position: absolute;
+  left: 380px;
+  z-index: 4;
+  top: 100px;
+}
+.footer__application {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+.application__title {
+  font-size: calc(25px + 0.7936507937vw);
+}
+.application__text {
+  font-size: calc(10px + 0.3968253968vw);
 }/*# sourceMappingURL=main.css.map */

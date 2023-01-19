@@ -828,10 +828,69 @@
   }
 }
 .location{
+  margin-block: 50px;
   &__map{
     max-width: 1220px;
     width: 100%;
     border: transparent;
+    border-radius: $borderRad70;
+  }
+}
+
+.footer {
+  background-color: indigo;
+  &__top {
+    
+  }
+  .top__container {
+    @include flex();
+    min-height: 500px;
+    padding: 40px;
+    background-color: rgb(39, 0, 145);
+    border-radius: $borderRadius;
+    overflow: hidden;
+  }
+  &__images {
+    position: relative;
+  }
+  &__gren-logo {
+      position: absolute;
+      width: 370px;
+      bottom: -110px;
+      left: -40px;
+      z-index: 1;
+  }
+  &__image {
+    position: absolute;
+    rotate: -30deg;
+    left: 60px;
+    // top: 10px;
+    bottom: -385px;
+    z-index: 2;
     border-radius: $borderRadius;
   }
+  &__white-logo {
+    position: absolute;
+    left: 380px;
+    z-index: 4;
+    top: 100px;
+  }
+  &__application {
+    @include flex(flex-start);
+    flex-direction: column;
+    max-width: 420px;
+  }
+}
+.application {
+  &__title {
+    font-size: calc(25px + 10 * (100vw / 1260));
+  }
+  &__text {
+    font-size: calc(10px + 5 * (100vw / 1260));
+  }
+}
+.input {
+  &__name {}
+  &__tel {}
+  &__submit {}
 }

@@ -14,11 +14,11 @@ for (let item of link) {
   });
 };
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".mySwiper", { 
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
-    delay: 3000,
+    delay: 2000,
     disableOnInteraction: false,
   },
   pagination: {

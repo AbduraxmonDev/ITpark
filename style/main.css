@@ -802,4 +802,113 @@ button {
 }
 .info__icon path {
   transition: 0.5s;
+}
+
+.university__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #00BFD5;
+  border-radius: 100px;
+  padding: 40px;
+  min-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+.university__logos .itpu__logo {
+  position: absolute;
+  z-index: 3;
+}
+.university__logos .itpu__image {
+  position: absolute;
+  rotate: -30deg;
+  border-radius: 100px;
+  left: 10px;
+  bottom: -20px;
+}
+.university__logos .itp__logo {
+  position: absolute;
+  left: 410px;
+  bottom: 60px;
+  rotate: 15deg;
+}
+.university__about {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: right;
+  gap: calc(15px + 0.7936507937vw);
+  max-width: 500px;
+}
+@media screen and (max-width: 940px) {
+  .university__container {
+    align-items: center;
+    flex-direction: column;
+    border-radius: 70px;
+    position: relative;
+  }
+  .university__about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    gap: calc(15px + 0.7936507937vw);
+    max-width: 500px;
+  }
+  .university__logos .itpu__logo {
+    position: absolute;
+    left: 40px;
+    z-index: 3;
+  }
+  .university__logos .itpu__image {
+    position: absolute;
+    rotate: -5.59deg;
+    width: 270px;
+    border-radius: 100px;
+    left: unset;
+    top: -30px;
+    right: -90px;
+  }
+  .university__logos .itp__logo {
+    position: absolute;
+    width: 160px;
+    top: 130px;
+    left: unset;
+    right: 105px;
+    rotate: 15deg;
+  }
+}
+
+.about__title {
+  color: #FFFFFF;
+  font-size: calc(25px + 0.7936507937vw);
+}
+.about__text {
+  color: #FFFFFF;
+  font-size: calc(15px + 0.7936507937vw);
+}
+.about__link {
+  color: rgb(28, 25, 23);
+  font-size: calc(15px + 0.7936507937vw);
+  padding-inline: calc(20px + 0.7936507937vw);
+  padding-block: calc(10px + 0.4761904762vw);
+  border-radius: 100px;
+  background-color: rgb(242, 243, 247);
+  transition: 0.5s;
+}
+.about__link .link__icon {
+  margin-left: 10px;
+}
+.about__link .link__icon path {
+  transition: 0.5s;
+  fill: black;
+}
+.about__link:hover {
+  background-color: rgb(28, 25, 23);
+  color: #FFFFFF;
+}
+.about__link:hover path {
+  fill: rgb(242, 243, 247);
 }/*# sourceMappingURL=main.css.map */

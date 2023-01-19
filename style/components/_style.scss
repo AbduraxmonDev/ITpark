@@ -724,3 +724,113 @@
   }
 
 }
+
+.university {
+  &__container {
+    @include flex(flex-start);
+    background-color: #00BFD5;
+    border-radius: $borderRadius;
+    padding: 40px;
+    min-height: 560px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__logos{
+    .itpu__logo{
+      position: absolute;
+      z-index: 3;
+    }
+    .itpu__image{
+      position: absolute;
+      rotate: -30deg;
+      border-radius: $borderRadius;
+      left: 10px;
+      bottom: -20px;
+    }
+    .itp__logo{
+      position: absolute;
+      left: 410px;
+      bottom: 60px;
+      rotate: 15deg;
+    }
+  }
+  &__about {
+    @include flex(flex-end);
+    flex-direction: column;
+    text-align: right;
+    gap: calc(15px + 10 * (100vw / 1260));
+    max-width: 500px;
+  }
+  @media screen and (max-width: 940px){
+    &__container{
+      align-items: center;
+      flex-direction: column;
+      border-radius: $borderRad70;
+      position: relative;
+    }
+    &__about{
+      @include flex();
+      flex-direction: column;
+      text-align: center;
+      gap: calc(15px + 10 * (100vw / 1260));
+      max-width: 500px;
+    }
+    &__logos{
+      .itpu__logo{
+        position: absolute;
+        left: 40px;
+        z-index: 3;
+      }
+      .itpu__image{
+        position: absolute;
+        rotate: -5.59deg;
+        width: 270px;
+        border-radius: $borderRadius;
+        left: unset;
+        top: -30px;
+        right: -90px;
+      }
+      .itp__logo{
+        position: absolute;
+        width: 160px;
+        top: 130px;
+        left: unset;
+        right: 105px;
+        rotate: 15deg;
+      }
+    }
+  }
+}
+.about {
+  &__title {
+      color: $whiteColor;
+      font-size: calc(25px + 10 * (100vw / 1260)) ;
+  }
+  &__text {
+    color: $whiteColor;
+    font-size: calc(15px + 10 * (100vw / 1260));
+  }
+  &__link {
+    color: $blackColor;
+    font-size: calc(15px + 10 * (100vw / 1260));
+    padding-inline: calc(20px + 10 * (100vw / 1260));
+    padding-block: calc(10px + 6 * (100vw / 1260));
+    border-radius: $borderRadius;
+    background-color: $whiteBg;
+    transition: $transition;
+    .link__icon{
+      margin-left: 10px;
+      path{
+        transition: $transition;
+        fill: black;
+      }
+    }
+   &:hover{
+    background-color: $blackBg;
+    color: $whiteColor;
+    path{
+      fill: $whiteBg
+    }
+   }
+  }
+}

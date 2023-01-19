@@ -32,17 +32,71 @@ moreBtn.addEventListener("click", function () {
   document.querySelector(".courses__types").classList.toggle("more");
 });
 
-let input = document.querySelector("#input");
+let inputName = document.querySelector("#inputName");
 let submitBtn = document.querySelector("#submitBtn");
-let error = document.querySelector("#error");
+let errorName = document.querySelector("#errorName");
+let errorNameNum = '1234567890!@#$%^&*()-_=+{}[]":;""?\<,>./|'
+let errorNametext = document.querySelector('#errorNametext')
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (input.value === "") {
-    error.style.display = "block";
+  if (inputName.value === "") {
+    inputName.style.borderColor = "red";
     setTimeout(function () {
-      error.style.display = "none";
+      inputName.style.borderColor = "transparent";
     }, 3000);
+    errorName.style.display = "block";
+    setTimeout(function () {
+      errorName.style.display = "none";
+    }, 3000);
+  } else if(errorNameNum.includes(inputName.value)) {
+    inputName.style.borderColor = "red";
+    setTimeout(function () {
+      inputName.style.borderColor = "transparent";
+    }, 3000);
+    errorNametext.style.display = "block";
+    setTimeout(function () {
+      errorNametext.style.display = "none";
+    }, 3000);
+  }
+   else {
+    inputName.style.borderColor = "transparent";
+  }
+});
+
+let inputTel = document.querySelector("#inputTel");
+let errorTelNum = document.querySelector("#errortelnum");
+let errorTel = document.querySelector("#errorTel");
+
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (inputTel.value === "") {
+    inputTel.style.borderColor = "red";
+
+    setTimeout(function () {
+      inputTel.style.borderColor = "transparent";
+    }, 3000);
+
+    errorTel.style.display = "block";
+
+    setTimeout(function () {
+      errorTel.style.display = "none";
+    }, 3000);
+
+  } else if(inputTel.value == 's') {
+    errorTelNum.style.display = "block";
+
+    setTimeout(function () {
+      errorTelNum.style.display = "none";
+    }, 3000);
+
+    inputTel.style.borderColor = "red";
+
+    setTimeout(function () {
+      inputTel.style.borderColor = "transparent";
+    }, 3000);
+
   } else {
-    console.log(typeof input.value)
+    inputTel.value = "";
+    inputTel.style.borderColor = "transparent";
   }
 });

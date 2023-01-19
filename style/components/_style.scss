@@ -606,6 +606,7 @@
 .aboutus{
   position: relative;
   margin-block: 100px;
+  scroll-margin-top: 140px;
   &__top{
     @include flex(flex-start);
     flex-direction: column;
@@ -828,6 +829,7 @@
   }
 }
 .location{
+  // margin: 50px 0 300px 0;
   margin-block: 50px;
   &__map{
     max-width: 1220px;
@@ -838,14 +840,18 @@
 }
 
 .footer {
-  background-color: indigo;
   .top__container {
     @include flex();
+    // scroll-margin-top: 200px;
+    // max-width: 1220px;
+    // width: 100%;
     min-height: 500px;
-    padding: 40px;
-    background-color: rgb(39, 0, 145);
+    padding: 40px !important;
+    background-color: $whiteBg;
     border-radius: $borderRadius;
     overflow: hidden;
+    margin-bottom: -300px;
+    position: relative;
   }
   &__images {
     position: relative;
@@ -861,7 +867,6 @@
     position: absolute;
     rotate: -30deg;
     left: 60px;
-    // top: 10px;
     bottom: -385px;
     z-index: 2;
     border-radius: $borderRadius;
@@ -878,6 +883,180 @@
     max-width: 420px;
     gap: 20px;
   }
+  @media screen and (max-width: 1120px){
+    &__gren-logo {
+      position: absolute;
+      width: 250px;
+      bottom: -110px;
+      left: -40px;
+      z-index: 1;
+  }
+  &__image {
+    position: absolute;
+    rotate: -30deg;
+    left: 60px;
+    bottom: -335px;
+    z-index: 2;
+    width: 380px;
+    border-radius: $borderRadius;
+  }
+  &__white-logo {
+    position: absolute;
+    width: 200px;
+    left: 300px;
+    z-index: 4;
+    top: 100px;
+  }
+  }
+  @media screen and (max-width: 1020px){
+    .top__container {
+      @include flex();
+      flex-direction: column;
+      min-height: 800px;
+      border-radius: $borderRad70;
+    }
+    &__gren-logo {
+      position: absolute;
+      width: 230px;
+      top: -30px;
+      right: 15px;
+      left: unset;
+      z-index: 1;
+  }
+  &__image {
+    position: absolute;
+    rotate: -30deg;
+    left: unset;
+    right: -190px;
+    z-index: 1;
+    top: 0;
+    width: 300px;
+    border-radius: $borderRadius;
+  }
+  &__white-logo {
+    position: absolute;
+    width: 200px;
+    left: unset;
+    right: -240px;
+    z-index: 4;
+    top: 100px;
+  }
+  }
+  &__down{
+    background-color: $greenBg;
+    border-top-right-radius: $borderRadius;
+   border-top-left-radius: $borderRadius;
+  }
+	&__navbar {
+    @include flex();
+    margin: 300px 0 30px 0;
+    padding-bottom: 50px;
+    border-bottom: 1px solid $grayColor
+  }
+	&__right {
+    @include flex(stretch);
+    gap: 80px;
+  }
+	&__title {
+    color: $whiteColor;
+  }
+	&__info {
+    @include flex();
+  }
+	&__rights {
+    color: $whiteColor;
+    font-size: calc(10px + 5 * (100vw / 1260));
+  }
+
+
+.about {
+		&__location {
+      max-width: 170px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+		&__telephone {
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+		&__sm {
+      max-width: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+}
+.location {
+		&__link {
+      color: $whiteColor;
+    }
+}
+.telephone {
+		&__link {
+      color: $whiteColor;
+    }
+}
+.insta {
+		&__icon {
+      &:hover{
+        fill: red;
+        stroke: red;
+        path{
+          stroke: gold;
+        }
+      }
+    }
+}
+.facebook {
+		&__icon {
+      &:hover{
+        fill: blue;
+        stroke: blue;
+        path{
+          stroke: gold;
+        }
+      }
+    }
+}
+.telegram {
+		&__icon {
+      &:hover{
+        fill: rgb(0, 191, 255);
+        stroke: rgb(0, 191, 255);
+        path{
+          stroke: gold;
+        }
+      }
+    }
+}
+.youtube {
+		&__icon {
+      &:hover{
+        fill: red;
+        stroke: red;
+        path{
+          stroke: gold;
+        }
+      }
+    }
+}
+ @media screen and (max-width: 875px) {
+   &__navbar{
+    flex-direction: column;
+    gap: 20px;
+   }
+   &__right{
+    flex-direction: column;
+    text-align: center;
+   }
+   &__info{
+    flex-direction: column;
+    gap: 20px;
+   }
+ }
 }
 .application {
   &__title {
@@ -892,20 +1071,24 @@
   @include flex();
   flex-direction: column;
   width: 100%;
-  gap: 20px;
+  gap: 15px;
   .input {
-    
+    &__error{
+      font-size: 16px;
+      color: red;
+      display: none;
+    }
     &__name {
       width: 100% !important;
       padding: 20px;
-      border: transparent;
+      border: 2px solid transparent;
       border-radius: $borderRadius;
       font-size: 18px;
     }
     &__tel {
       width: 100%;
       padding: 20px;
-      border: transparent;
+      border: 2px soid transparent;
       border-radius: $borderRadius;
       font-size: 18px;
     }
@@ -918,9 +1101,4 @@
       background-color: $greenBg;
     }
   }
-}
-.input__error{
-  font-size: 16px;
-  color: red;
-  display: none;
 }

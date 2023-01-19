@@ -396,11 +396,13 @@
               <div class="footer__application">
                 <h1 class="application__title">Ariza qoldiring</h1>
                 <p class="application__text">Malumot qoldiring mutaxassislarimiz tez orada siz bilan boglanishadi</p>
-                <form action="">
+                <form action="" class="application__input">
                   <input class="input__name" type="text" placeholder="Ismingiz">
-                  <input class="input__tel" type="tel" placeholder="Telefon raqamingiz">
-                  <button class="input__submit">Yuborish</button>
+                  <input id="input" class="input__tel" type="tel" placeholder="Telefon raqamingiz">
+                  
+                  <button id="submitBtn" class="input__submit">Yuborish</button>
                 </form>
+                <p id="error" class="input__error">Telefon raqam uzunligi 19 bo'lishi kerak</p>
               </div>
             </div>
           </div>

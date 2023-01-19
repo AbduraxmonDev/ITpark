@@ -966,6 +966,7 @@ button {
   justify-content: space-between;
   flex-direction: column;
   max-width: 420px;
+  gap: 20px;
 }
 
 .application__title {
@@ -973,4 +974,42 @@ button {
 }
 .application__text {
   font-size: calc(10px + 0.3968253968vw);
+  color: rgb(141, 140, 139);
+}
+
+.application__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.application__input .input__name {
+  width: 100% !important;
+  padding: 20px;
+  border: transparent;
+  border-radius: 100px;
+  font-size: 18px;
+}
+.application__input .input__tel {
+  width: 100%;
+  padding: 20px;
+  border: transparent;
+  border-radius: 100px;
+  font-size: 18px;
+}
+.application__input .input__submit {
+  width: 100%;
+  padding: 20px;
+  border: transparent;
+  border-radius: 100px;
+  font-size: 16px;
+  background-color: rgb(192, 228, 68);
+}
+
+.input__error {
+  font-size: 16px;
+  color: red;
+  display: none;
 }/*# sourceMappingURL=main.css.map */

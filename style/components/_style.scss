@@ -839,9 +839,6 @@
 
 .footer {
   background-color: indigo;
-  &__top {
-    
-  }
   .top__container {
     @include flex();
     min-height: 500px;
@@ -879,6 +876,7 @@
     @include flex(flex-start);
     flex-direction: column;
     max-width: 420px;
+    gap: 20px;
   }
 }
 .application {
@@ -887,10 +885,42 @@
   }
   &__text {
     font-size: calc(10px + 5 * (100vw / 1260));
+    color: $grayColor;
   }
 }
-.input {
-  &__name {}
-  &__tel {}
-  &__submit {}
+.application__input{
+  @include flex();
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  .input {
+    
+    &__name {
+      width: 100% !important;
+      padding: 20px;
+      border: transparent;
+      border-radius: $borderRadius;
+      font-size: 18px;
+    }
+    &__tel {
+      width: 100%;
+      padding: 20px;
+      border: transparent;
+      border-radius: $borderRadius;
+      font-size: 18px;
+    }
+    &__submit {
+      width: 100%;
+      padding: 20px;
+      border: transparent;
+      border-radius: $borderRadius;
+      font-size: 16px;
+      background-color: $greenBg;
+    }
+  }
+}
+.input__error{
+  font-size: 16px;
+  color: red;
+  display: none;
 }

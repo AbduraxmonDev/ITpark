@@ -402,7 +402,6 @@
     grid-row: 3 / 4;
   }
 }
-
 .courses{
   scroll-margin-top: 140px;
   position: relative;  
@@ -592,7 +591,6 @@
 .article-3{
   background-color: #7F71B1 !important;
 }
-
 @media screen and (max-width: 550px) {
   .article__card{
     position: relative;
@@ -605,8 +603,6 @@
     // right: 40px;
   }
 }
-
-
 .aboutus{
   position: relative;
   margin-block: 100px;
@@ -643,8 +639,6 @@
     object-fit: cover;
   }
 }
-
-
 .check {
   &__top {
     margin-bottom: 50px;
@@ -724,7 +718,6 @@
   }
 
 }
-
 .university {
   &__container {
     @include flex(flex-start);
@@ -761,7 +754,7 @@
     gap: calc(15px + 10 * (100vw / 1260));
     max-width: 500px;
   }
-  @media screen and (max-width: 940px){
+  @media screen and (max-width: 960px){
     &__container{
       align-items: center;
       flex-direction: column;
@@ -832,5 +825,13 @@
       fill: $whiteBg
     }
    }
+  }
+}
+.location{
+  &__map{
+    max-width: 1220px;
+    width: 100%;
+    border: transparent;
+    border-radius: $borderRadius;
   }
 }

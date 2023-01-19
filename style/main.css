@@ -841,7 +841,7 @@ button {
   gap: calc(15px + 0.7936507937vw);
   max-width: 500px;
 }
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 960px) {
   .university__container {
     align-items: center;
     flex-direction: column;
@@ -911,4 +911,11 @@ button {
 }
 .about__link:hover path {
   fill: rgb(242, 243, 247);
+}
+
+.location__map {
+  max-width: 1220px;
+  width: 100%;
+  border: transparent;
+  border-radius: 100px;
 }/*# sourceMappingURL=main.css.map */

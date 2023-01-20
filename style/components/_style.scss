@@ -574,7 +574,7 @@
 .article-2{
   background-color: #2DCACC !important;
   .article__top{
-    @include flex(flex-end);
+    @include flex(flex-start);
   }
   .article__down{
     flex-direction: row-reverse;
@@ -1089,14 +1089,14 @@
       padding: 20px;
       border: 2px solid transparent;
       border-radius: $borderRadius;
-      font-size: 18px;
+      font-size: 14px;
     }
     &__tel {
       width: 100%;
       padding: 20px;
       border: 2px solid transparent;
       border-radius: $borderRadius;
-      font-size: 18px;
+      font-size: 14px;
     }
     &__submit {
       width: 100%;
@@ -1111,5 +1111,74 @@
         background-color: rgba(212, 236, 130, 1);
       }
     }
+  }
+}
+
+
+.check {
+  &__serificate{
+      padding-top: 150px
+  }
+  &__content {
+      @include flex();
+      background-color: $darkWhiteBG;
+      border-radius: $borderRadius;
+      padding: 56px;
+      gap: 30px;
+  }
+  &__form {
+      max-width: 420px;
+  }
+  &__error{
+      color: red; 
+      display: none;
+  }
+  @media screen and (max-width: 860px) {
+    &__content {
+      @include flex();
+      flex-direction: column;
+      border-radius: 50px;
+      
+    }
+
+  }
+}
+.sertificate {
+  &__picture {
+      border-radius: 50px;
+      width: calc(100px + 400 * (100vw / 1260))
+  }
+}
+.form {
+  @include flex(flex-start);
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  &__title {
+      font-size: calc(18px + 10 * (100vw / 1260));
+  }
+  &__text {
+      font-size: calc(10px + 5 * (100vw / 1260));
+      color: $grayColor;
+  }
+  &__input {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border:1px solid transparent;
+      border-radius: $borderRadius;
+  }
+  &__submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      color: $whiteColor;
+      border: transparent;
+      border-radius: $borderRadius;
+      background-color: $greenBg;
+      transition: $transition;
+      &:hover{
+          background-color: rgba(212, 236, 130, 1);
+        }
   }
 }

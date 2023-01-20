@@ -49,11 +49,7 @@
       background-color: $greenBg;
       border-radius: $borderRadius;
     }
-    &:focus {
-      color: $whiteColor;
-      background-color: $greenBg;
-      border-radius: $borderRadius;
-    }
+
   }
   &__link:last-child {
     @include flex();
@@ -140,7 +136,7 @@
     }
   }
 }
-.home {
+.home { 
   padding-top: 164px;
   &__container {
     @include flex();
@@ -633,6 +629,9 @@
     width: 100%;
     height: 560px;
   }
+  .swiper-wrapper{
+    transition-duration: 900ms !important;
+  }
   .slide-image{
     width: 100%;
     height: 560px;
@@ -697,7 +696,7 @@
     color: $whiteColor;
     background-color: $blackBg;
     padding-inline: calc(14px + 10 * (100vw / 1260));
-    padding-block: calc(12px + 12 * (100vw / 1260));
+    padding-block: calc(12px + 5 * (100vw / 1260));
     border-radius: $borderRadius;
     transition: $transition;
     margin-bottom: 30px;
@@ -806,7 +805,7 @@
   }
   &__link {
     color: $blackColor;
-    font-size: calc(15px + 10 * (100vw / 1260));
+    font-size: calc(10px + 10 * (100vw / 1260));
     padding-inline: calc(20px + 10 * (100vw / 1260));
     padding-block: calc(10px + 6 * (100vw / 1260));
     border-radius: $borderRadius;
@@ -829,7 +828,6 @@
   }
 }
 .location{
-  // margin: 50px 0 300px 0;
   margin-block: 50px;
   &__map{
     max-width: 1220px;
@@ -838,13 +836,12 @@
     border-radius: $borderRad70;
   }
 }
-
 .footer {
+  &__top{
+    scroll-margin-top: 150px;
+  }
   .top__container {
     @include flex();
-    // scroll-margin-top: 200px;
-    // max-width: 1220px;
-    // width: 100%;
     min-height: 500px;
     padding: 40px !important;
     background-color: $whiteBg;
@@ -1002,10 +999,12 @@
 .insta {
 		&__icon {
       &:hover{
-        fill: red;
-        stroke: red;
+        fill: white;
+        ellipse{
+          fill: rgb(0, 136, 255);
+        }
         path{
-          stroke: gold;
+          stroke: red;
         }
       }
     }
@@ -1013,21 +1012,26 @@
 .facebook {
 		&__icon {
       &:hover{
-        fill: blue;
-        stroke: blue;
+        fill: white;
+        ellipse{
+          fill: rgb(0, 136, 255);
+        }
         path{
-          stroke: gold;
+          stroke: rgb(49, 3, 255);
         }
       }
     }
 }
 .telegram {
 		&__icon {
+      
       &:hover{
-        fill: rgb(0, 191, 255);
-        stroke: rgb(0, 191, 255);
+        fill: white;
+        ellipse{
+          fill: rgb(0, 136, 255);
+        }
         path{
-          stroke: gold;
+          stroke: rgb(49, 3, 255);
         }
       }
     }
@@ -1035,10 +1039,12 @@
 .youtube {
 		&__icon {
       &:hover{
-        fill: red;
-        stroke: red;
+        fill: white;
+        ellipse{
+          fill: rgb(0, 136, 255);
+        }
         path{
-          stroke: gold;
+          stroke: red;
         }
       }
     }
@@ -1088,7 +1094,7 @@
     &__tel {
       width: 100%;
       padding: 20px;
-      border: 2px soid transparent;
+      border: 2px solid transparent;
       border-radius: $borderRadius;
       font-size: 18px;
     }
@@ -1099,6 +1105,11 @@
       border-radius: $borderRadius;
       font-size: 16px;
       background-color: $greenBg;
+      color: $whiteColor;
+      transition: $transition;
+      &:hover{
+        background-color: rgba(212, 236, 130, 1);
+      }
     }
   }
 }

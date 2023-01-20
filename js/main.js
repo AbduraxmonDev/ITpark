@@ -35,8 +35,8 @@ moreBtn.addEventListener("click", function () {
 let inputName = document.querySelector("#inputName");
 let submitBtn = document.querySelector("#submitBtn");
 let errorName = document.querySelector("#errorName");
-let errorNameNum = '1234567890!@#$%^&*()-_=+{}[]":;""?\<,>./|'
-let errorNametext = document.querySelector('#errorNametext')
+let errorNameNum = '1234567890!@#$%^&*()-_=+{}[]":;""?<,>./|';
+let errorNametext = document.querySelector("#errorNametext");
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   if (inputName.value === "") {
@@ -48,7 +48,7 @@ submitBtn.addEventListener("click", function (e) {
     setTimeout(function () {
       errorName.style.display = "none";
     }, 3000);
-  } else if(errorNameNum.includes(inputName.value)) {
+  } else if (errorNameNum.includes(inputName.value)) {
     inputName.style.borderColor = "red";
     setTimeout(function () {
       inputName.style.borderColor = "transparent";
@@ -57,8 +57,7 @@ submitBtn.addEventListener("click", function (e) {
     setTimeout(function () {
       errorNametext.style.display = "none";
     }, 3000);
-  }
-   else {
+  } else {
     inputName.style.borderColor = "transparent";
   }
 });
@@ -81,8 +80,7 @@ submitBtn.addEventListener("click", function (e) {
     setTimeout(function () {
       errorTel.style.display = "none";
     }, 3000);
-
-  } else if(inputTel.value == 's') {
+  } else if (inputTel.value == "s") {
     errorTelNum.style.display = "block";
 
     setTimeout(function () {
@@ -94,9 +92,9 @@ submitBtn.addEventListener("click", function (e) {
     setTimeout(function () {
       inputTel.style.borderColor = "transparent";
     }, 3000);
-
   } else {
     inputTel.value = "";
     inputTel.style.borderColor = "transparent";
   }
 });
+

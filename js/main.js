@@ -32,71 +32,74 @@ moreBtn.addEventListener("click", function () {
   document.querySelector(".courses__types").classList.toggle("more");
 });
 
-// let inputName = document.querySelector("#inputName");
-// let submitBtn = document.querySelector("#submitBtn");
-// let errorName = document.querySelector("#errorName");
-// let errorNameNum = '1234567890!@#$%^&*()-_=+{}[]":;""?<,>./|';
-// let errorNametext = document.querySelector("#errorNametext");
-// submitBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   if (inputName.value === "") {
-//     inputName.style.borderColor = "red";
-//     setTimeout(function () {
-//       inputName.style.borderColor = "transparent";
-//     }, 3000);
-//     errorName.style.display = "block";
-//     setTimeout(function () {
-//       errorName.style.display = "none";
-//     }, 3000);
-//   } else if (errorNameNum.includes(inputName.value)) {
-//     inputName.style.borderColor = "red";
-//     setTimeout(function () {
-//       inputName.style.borderColor = "transparent";
-//     }, 3000);
-//     errorNametext.style.display = "block";
-//     setTimeout(function () {
-//       errorNametext.style.display = "none";
-//     }, 3000);
-//   } else {
-//     inputName.style.borderColor = "transparent";
-//   }
-// });
+let inputName = document.querySelector("#inputName");
+let submitBtns = document.querySelectorAll("#submitBtn");
+let errorName = document.querySelector("#errorName");
+let errorNameNum = '1234567890!@#$%^&*()-_=+{}[]":;""?<,>./|';
+let errorNametext = document.querySelector("#errorNametext");
 
-// let inputTel = document.querySelector("#inputTel");
-// let errorTelNum = document.querySelector("#errortelnum");
-// let errorTel = document.querySelector("#errorTel");
+for (const submitBtn of submitBtns) {
+  submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (inputName.value === "") {
+      inputName.style.borderColor = "red";
+      setTimeout(function () {
+        inputName.style.borderColor = "transparent";
+      }, 3000);
+      errorName.style.display = "block";
+      setTimeout(function () {
+        errorName.style.display = "none";
+      }, 3000);
+    } else if (errorNameNum.includes(inputName.value)) {
+      inputName.style.borderColor = "red";
+      setTimeout(function () {
+        inputName.style.borderColor = "transparent";
+      }, 3000);
+      errorNametext.style.display = "block";
+      setTimeout(function () {
+        errorNametext.style.display = "none";
+      }, 3000);
+    } else {
+      inputName.style.borderColor = "transparent";
+    }
+  });
+}
 
-// submitBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   if (inputTel.value === "") {
-//     inputTel.style.borderColor = "red";
+let inputTel = document.querySelector("#inputTel");
+let errorTelNum = document.querySelector("#errortelnum");
+let errorTel = document.querySelector("#errorTel");
 
-//     setTimeout(function () {
-//       inputTel.style.borderColor = "transparent";
-//     }, 3000);
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (inputTel.value === "") {
+    inputTel.style.borderColor = "red";
 
-//     errorTel.style.display = "block";
+    setTimeout(function () {
+      inputTel.style.borderColor = "transparent";
+    }, 3000);
 
-//     setTimeout(function () {
-//       errorTel.style.display = "none";
-//     }, 3000);
-//   } else if (inputTel.value == "s") {
-//     errorTelNum.style.display = "block";
+    errorTel.style.display = "block";
 
-//     setTimeout(function () {
-//       errorTelNum.style.display = "none";
-//     }, 3000);
+    setTimeout(function () {
+      errorTel.style.display = "none";
+    }, 3000);
+  } else if (inputTel.value == "s") {
+    errorTelNum.style.display = "block";
 
-//     inputTel.style.borderColor = "red";
+    setTimeout(function () {
+      errorTelNum.style.display = "none";
+    }, 3000);
 
-//     setTimeout(function () {
-//       inputTel.style.borderColor = "transparent";
-//     }, 3000);
-//   } else {
-//     inputTel.value = "";
-//     inputTel.style.borderColor = "transparent";
-//   }
-// });
+    inputTel.style.borderColor = "red";
+
+    setTimeout(function () {
+      inputTel.style.borderColor = "transparent";
+    }, 3000);
+  } else {
+    inputTel.value = "";
+    inputTel.style.borderColor = "transparent";
+  }
+});
 
 // let checkInput = document.querySelector("#checkInput");
 // let checkError = document.querySelector("#checkError");
